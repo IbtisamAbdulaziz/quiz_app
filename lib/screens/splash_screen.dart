@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:quiz_app_ewabootcamp/screens/login_screen.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -31,9 +32,12 @@ class SplashScreen extends StatelessWidget {
             width: 150,
           ),
           Text(
-            "Welcome to Quiz App",
+            "Ready ? Let's get started ! ",
             style: TextStyle(
-                fontSize: 25, color: Colors.brown, fontWeight: FontWeight.bold),
+                fontSize: 25,
+                color: Colors.brown,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Schyler'),
           ),
           Spacer(), // بياخد المسافة الفاضية المتاحة في المكان اللي هو فيه
 
@@ -42,8 +46,15 @@ class SplashScreen extends StatelessWidget {
               child: ElevatedButton(
                   // style:
                   //     ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                  onPressed: () {},
-                  child: Text("إبدأ اللعبة")))
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (BuildContext context) =>
+                              const LoginScreen(),
+                        ));
+                  },
+                  child: Text("Go to login screen")))
         ],
       ),
     ));
