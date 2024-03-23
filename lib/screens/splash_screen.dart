@@ -6,14 +6,9 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // floatingActionButton: FloatingActionButton(
-        //   onPressed: () {},
-        //   child: Icon(Icons.add),
-        // ),
         body: Container(
       padding: EdgeInsets.all(12),
       decoration: BoxDecoration(
-          // border: Border.all(width: 6, color: Colors.red),
           image: DecorationImage(
               image: AssetImage("assets/app_backgroun_image.jpg"),
               fit: BoxFit.cover)),

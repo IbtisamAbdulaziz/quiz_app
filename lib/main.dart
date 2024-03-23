@@ -6,7 +6,6 @@ import 'package:quiz_app_ewabootcamp/screens/score_screen.dart';
 import 'package:quiz_app_ewabootcamp/screens/splash_screen.dart';
 
 void main() {
-  // main function is the entry point of the project
   runApp(const MyApp());
 }
 

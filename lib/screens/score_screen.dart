@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_ewabootcamp/screens/splash_screen.dart';
+import 'package:quiz_app_ewabootcamp/utils/global_variable.dart';
 
 class ScoreScreen extends StatelessWidget {
   const ScoreScreen({super.key});
@@ -8,19 +9,29 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(12.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Good Job Ibtisam, You've completed the quiz and your score is: ",
-              textAlign: TextAlign.center,
-            ),
-            Text(
-              "18/20",
-              style: TextStyle(fontSize: 20, color: Colors.deepPurpleAccent),
-            ),
-            SizedBox(
+            RichText(
+                text:
+                    TextSpan(style: TextStyle(color: Colors.black), children: [
+              const TextSpan(
+                text: "Good job  ",
+              ),
+              TextSpan(
+                  text: userNameController.text,
+                  style: const TextStyle(
+                      color: Colors.blue,
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold)),
+              const TextSpan(
+                  text: "  you have completed the quiz and your score is"),
+              const TextSpan(
+                  text: " 8/10",
+                  style: TextStyle(fontSize: 25, color: Colors.red)),
+            ])),
+            const SizedBox(
               height: 20,
             ),
             TextButton(
@@ -32,7 +43,7 @@ class ScoreScreen extends StatelessWidget {
                     ),
                   );
                 },
-                child: Text("Play again"))
+                child: const Text("Play again"))
           ],
         ),
       ),
