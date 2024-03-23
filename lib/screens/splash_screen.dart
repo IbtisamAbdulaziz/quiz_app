@@ -51,7 +51,7 @@ class SplashScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute<void>(
                           builder: (BuildContext context) =>
-                              const LoginScreen(),
+                               LoginScreen(),
                         ));
                   },
                   child: Text("Go to login screen")))

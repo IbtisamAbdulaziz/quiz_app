@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app_ewabootcamp/screens/category_screen.dart';
+import 'package:quiz_app_ewabootcamp/utils/global_variable.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
