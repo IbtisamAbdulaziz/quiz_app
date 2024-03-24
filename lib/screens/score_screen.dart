@@ -28,7 +28,7 @@ class ScoreScreen extends StatelessWidget {
               const TextSpan(
                   text: "  you have completed the quiz and your score is"),
               const TextSpan(
-                  text: " 8/10",
+                  //text: totalScore,
                   style: TextStyle(fontSize: 25, color: Colors.red)),
             ])),
             const SizedBox(

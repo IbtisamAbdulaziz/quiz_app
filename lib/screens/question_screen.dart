@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:quiz_app_ewabootcamp/screens/score_screen.dart';
+import 'package:quiz_app_ewabootcamp/utils/global_variable.dart';
 
 class QuestionScreen extends StatefulWidget {
   final List? questionsAndAnswersList;
@@ -12,6 +15,7 @@ class QuestionScreen extends StatefulWidget {
 
 class _QuestionScreenState extends State<QuestionScreen> {
   int _currentIndex = 0;
+  int _scoreCounter = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -63,6 +67,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
                       if ((_currentIndex + 1) <
                           widget.questionsAndAnswersList!.length) {
                         setState(() {
+                          //////////////////////////////////////////////////////
+                          if (widget.questionsAndAnswersList![_currentIndex]
+                                  ["answers"][i] ==
+                              widget.questionsAndAnswersList![_currentIndex]
+                                  ["correctAnswerIndex"]) {
+                            _scoreCounter++;
+                          }
+                          ///////////////////////////////////////////////////////
+
                           // _currentIndex = _currentIndex + 1;
                           _currentIndex++;
                         });
@@ -74,6 +87,8 @@ class _QuestionScreenState extends State<QuestionScreen> {
                                 const ScoreScreen(),
                           ),
                         );
+
+                        totalScore = _scoreCounter;
                       }
                     },
                     child: Text(widget.questionsAndAnswersList![_currentIndex]
